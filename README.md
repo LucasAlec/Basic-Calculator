@@ -15,3 +15,7 @@
 * Adding a Custom Function
 
 * Returning Values
+
+* Executing Function Indirectly
+
+* Using Arrays
