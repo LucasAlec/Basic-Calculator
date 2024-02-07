@@ -19,3 +19,5 @@
 * Executing Function Indirectly
 
 * Using Arrays
+
+* Adding a Re-Usable Function That Uses Objects
