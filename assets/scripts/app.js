@@ -4,7 +4,7 @@ let logEntries=[];
 
 // Gets input from input field
 function getUserInput(){
-    return parseInt(userInput.value);
+    return parseInt(usrInput.value);
 }
 
 // Generates and writes calculation log
@@ -29,20 +29,28 @@ function writeToLog(
     console.log(logEntries);
 }
 
-function add() {
+function calculateResult(calculationType){
     const enteredNumber =  getUserInput();
     const initialResult = currentResult;
-    currentResult += enteredNumber;
-    createAndWriteOutput('+', initialResult, enteredNumber);
-    writeToLog('ADD', initialResult, enteredNumber, currentResult);
+    let mathOperator;
+    if (calculationType === 'add') {
+        currentResult += enteredNumber;
+        mathOperator = '+';
+    } else {
+        currentResult -= enteredNumber;
+        mathOperator = '-';
+    }
+    
+    createAndWriteOutput(mathOperator, initialResult, enteredNumber);
+    writeToLog(calculationType, initialResult, enteredNumber, currentResult);
+}
+
+function add() {
+    calculateResult('ADD');
 }
 
 function subtract() {
-    const enteredNumber =  getUserInput();
-    const initialResult = currentResult;
-    currentResult -= enteredNumber;
-    createAndWriteOutput('-', initialResult, enteredNumber);
-    writeToLog('SUBTRACT', initialResult, enteredNumber, currentResult);
+    calculateResult('SUBTRACT');
 }
 
 function multiply() {
