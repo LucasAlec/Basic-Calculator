@@ -23,3 +23,5 @@
 * Adding a Re-Usable Function That Uses Objects
 
 * Using "if" Statements
+
+* Adding bind() to the Calculator Project
